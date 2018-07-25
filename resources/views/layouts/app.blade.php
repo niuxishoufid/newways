@@ -48,6 +48,22 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
+                            <!-- 言語切り替え -->
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Config::get('languages')[App::getLocale()] }} <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    @foreach (Config::get('languages') as $lang => $language)
+                                        @if ($lang != App::getLocale())
+                                            <li>
+                                                <a href="{{ url('/lang/'.$lang) }}">{{$language}}</a>
+                                            </li>
+                                        @endif
+                                    @endforeach
+                                </ul>
+                            </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
