@@ -2,21 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Validator;
-use App\User;
-use App\UserInfo;
 use App\Admin;
-use App\StylistAdmin;
+use App\User;
 use App\Worker;
-use App\WorkerInfo;
-use App\Order;
-use App\PointPurchase;
-use App\Applicant;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller {
 

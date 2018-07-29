@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;  // \Adminを追加
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {

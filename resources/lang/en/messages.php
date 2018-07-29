@@ -9,5 +9,15 @@ return [
     '検索' => '検索',
     '名前' => '名前',
     'メール' => 'メールアドレス',
-
+    'Login' => 'Login',
+    'Logout' => 'Logout',
+    'Register' => 'Register',
+    'Forgot Your Password?' => 'Forgot Your Password?',
+    'Name' => 'Name',
+    'E-Mail Address' => 'E-Mail Address',
+    'Password' => 'Password',
+    'Confirm Password' => 'Confirm Password',
+    'Remember Me' => 'Remember Me',
+    
+    
 ];
