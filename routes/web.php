@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::post('register/pre_check', 'Auth\RegisterController@pre_check')->name('register.pre_check');
+Route::get('register/verify/{token}', 'Auth\RegisterController@showForm');
+Route::post('register/main_check', 'Auth\RegisterController@mainCheck')->name('register.main.check');
+Route::post('register/main_register', 'Auth\RegisterController@mainRegister')->name('register.main.registered');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/lang/{lang}', 'LanguageController@switchLang');

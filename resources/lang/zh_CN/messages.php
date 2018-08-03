@@ -18,6 +18,11 @@ return [
     'Password' => '密码',
     'Confirm Password' => '确认密码',
     'Remember Me' => '记住我',
+    'birthday' => '生日',
+    'year' => '年',
+    'month' => '月',
+    'day' => '日',
+
     
 
 ];

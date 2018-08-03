@@ -18,6 +18,9 @@ return [
     'Password' => 'パスワード',
     'Confirm Password' => '確認パスワード',
     'Remember Me' => '私を覚えてますか',
-    
+    'birthday' => '生年月日',
+    'year' => '年',
+    'month' => '月',
+    'day' => '日',
     
 ];
