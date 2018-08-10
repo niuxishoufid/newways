@@ -16,6 +16,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+//Route::get('login/wechat', 'Wechat\WechatController@index');
+//Route::get('login/wechat/login', 'Wechat\WechatController@login');
+Route::get('login/{provider}',          'Auth\LoginController@redirectToProvider');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::post('register/pre_check', 'Auth\RegisterController@pre_check')->name('register.pre_check');
 Route::get('register/verify/{token}', 'Auth\RegisterController@showForm');
 Route::post('register/main_check', 'Auth\RegisterController@mainCheck')->name('register.main.check');
@@ -62,4 +67,9 @@ Route::prefix('worker')->name('worker.')->group(function() {
 
     Route::get('/', 'Worker\HomeController@index');
     Route::get('/home', 'Worker\HomeController@index')->name('home');
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::get('oauth/callback/driver/{driver}', 'OAuthAuthorizationController@handleProviderCallback');
+    Route::get('oauth/redirect/driver/{driver}', 'OauthAuthorizationController@redirectToProvider');
 });
