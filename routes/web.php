@@ -18,9 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 //Route::get('login/wechat', 'Wechat\WechatController@index');
 //Route::get('login/wechat/login', 'Wechat\WechatController@login');
+//github/facebook等登陆
 Route::get('login/{provider}',          'Auth\LoginController@redirectToProvider');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
+//用户注册
 Route::post('register/pre_check', 'Auth\RegisterController@pre_check')->name('register.pre_check');
 Route::get('register/verify/{token}', 'Auth\RegisterController@showForm');
 Route::post('register/main_check', 'Auth\RegisterController@mainCheck')->name('register.main.check');
@@ -28,6 +30,7 @@ Route::post('register/main_register', 'Auth\RegisterController@mainRegister')->n
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//多语言切换
 Route::get('/lang/{lang}', 'LanguageController@switchLang');
 
 //Route::group(['prefix' => 'admin'], function() {
@@ -73,3 +76,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('oauth/callback/driver/{driver}', 'OAuthAuthorizationController@handleProviderCallback');
     Route::get('oauth/redirect/driver/{driver}', 'OauthAuthorizationController@redirectToProvider');
 });
+
+//PDF生成/下载/表示
+Route::resource('/pdf','PdfController');
